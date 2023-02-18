@@ -100,5 +100,13 @@ public class App
          * y lo deja pendiente de cobro
          * hasta que el usuario gana la rifa. 
          */
+
+         // factoria para elegir metodo pago
+
+        /**
+         * Añade la participacion a la rifa.
+         */
+
+        craft.register(entry);
     }
 }

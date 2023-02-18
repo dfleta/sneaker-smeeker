@@ -8,6 +8,7 @@ public class Sneaker implements Raffle {
     private String name = "";
     private Double price = 0d;
     private String[] sizes; 
+    private final Bucket bucket = new Bucket();
 
     public Sneaker() {};
 
@@ -17,6 +18,7 @@ public class Sneaker implements Raffle {
         this.price = price;
     }
 
+    @Override
     public Double price() {
         return this.price;
     }
@@ -28,6 +30,11 @@ public class Sneaker implements Raffle {
 
     String[] sizes() {
         return this.sizes;
+    }
+
+    @Override
+    public void register(Entry entry) {
+        this.bucket.add(entry);
     }
 
     @Override

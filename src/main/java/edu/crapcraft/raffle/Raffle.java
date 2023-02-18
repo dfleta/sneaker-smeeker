@@ -5,5 +5,6 @@ public interface Raffle {
 
     void sizesRun(Sizes min, Sizes max);
     Double price();
+    void register(Entry entry);
 
 }

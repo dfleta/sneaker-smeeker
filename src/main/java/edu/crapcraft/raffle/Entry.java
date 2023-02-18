@@ -50,4 +50,17 @@ public class Entry {
             .append(" €");
         return repr.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Entry) {
+            return this.email.equals(((Entry)obj).email) && this.payment.equals(((Entry)obj).payment);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.email.hashCode();
+    }    
 }
