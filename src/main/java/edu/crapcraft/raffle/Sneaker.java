@@ -17,6 +17,11 @@ public class Sneaker implements Raffle {
         this.price = price;
     }
 
+    public Double price() {
+        return this.price;
+    }
+
+    @Override
     public void sizesRun(Sizes min, Sizes max) {
         this.sizes = Sizes.getSizes(min, max).stream().map(Sizes::getUSsize).toArray(String[]::new);
     }

@@ -1,5 +1,6 @@
 package edu.crapcraft;
 
+import edu.crapcraft.raffle.Entry;
 import edu.crapcraft.raffle.GUI;
 import edu.crapcraft.raffle.Raffle;
 import edu.crapcraft.raffle.Sizes;
@@ -65,9 +66,39 @@ public class App
          * 9.0 US / 42 1/2 EU, 9.5 US / 43 EU
          */
 
-         Raffle craft = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
-         // indica el rango de tallas
-         craft.sizesRun(Sizes.CUARENTA, Sizes.CUARENTAYDOS);
-         System.out.println(GUI.drawSneaker(craft));
+        Raffle craft = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
+        // indica el rango de tallas
+        craft.sizesRun(Sizes.CUARENTA, Sizes.CUARENTAYDOS);
+        GUI.drawSneaker(craft);
+
+        /**
+         * El usuario Squanchy introduce sus datos
+         * para obtener una participacion.
+         * - Nombre
+         * - Correo electronico
+         * - Talla
+         * - Direccion de envio
+         * - Metodo de pago
+         * - Total
+         */
+
+        Entry entry = new Entry("squanchy@closet.in");
+        entry.setUserName("Squanchy");
+        entry.setSize(Sizes.CUARENTA);
+        entry.setAddress("Nearest closet s/n, 90210, Jerry's House, Via Lactea");
+        entry.setTotal(craft.price());
+        entry.payment("Paypal");
+
+        // añade a la clase GUI el componente para representar la entrada
+        GUI.drawEntry(entry);
+
+        /**
+         * Conecta con el sistema de pagos para
+         * autorizar el pago.
+         * 
+         * El sistema de pagos autoriza el cargo
+         * y lo deja pendiente de cobro
+         * hasta que el usuario gana la rifa. 
+         */
     }
 }
