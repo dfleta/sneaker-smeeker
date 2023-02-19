@@ -1,7 +1,7 @@
 package edu.crapcraft;
 
+import edu.crapcraft.GUI.GUI;
 import edu.crapcraft.raffle.Entry;
-import edu.crapcraft.raffle.GUI;
 import edu.crapcraft.raffle.Raffle;
 import edu.crapcraft.raffle.Sizes;
 import edu.crapcraft.raffle.Sneaker;
@@ -59,8 +59,8 @@ public class App
          * - Precio
          * - Tallas disponibles
          * 
-         * Crea una clase donde situar por SRP
-         * la funcion drawSneaker.
+         * Crea una clase llamada GUI donde 
+         * situar por SRP la rutina drawSneaker.
          * 
          * Las tallas se seleccionan por rango
          * de menor a mayor de entre las siguientes:
@@ -99,7 +99,10 @@ public class App
         entry.setTotal(craft.price());
         entry.payment("squanchy@paypal.com");
 
-        // añade a la clase GUI el componente para representar la entrada
+        /**
+         * Añade a la clase GUI la rutina drawEntry
+         * para representar la entrada.
+         */
         GUI.drawEntry(entry);
 
         /**
@@ -124,7 +127,7 @@ public class App
          * y no se añade la participacion a la rifa.
          */
 
-        // primera participacion
+        // primera participacion de Squanchy
         // total de participaciones = 1
 
         craft.register(entry);

@@ -1,4 +1,7 @@
-package edu.crapcraft.raffle;
+package edu.crapcraft.GUI;
+
+import edu.crapcraft.raffle.Entry;
+import edu.crapcraft.raffle.Raffle;
 
 public class GUI {
 
