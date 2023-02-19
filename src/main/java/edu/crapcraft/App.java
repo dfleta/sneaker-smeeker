@@ -117,7 +117,7 @@ public class App
          // factoria para elegir metodo pago
 
         /**
-         * Añade la participacion a la rifa.
+         * Añade la participacion en la rifa.
          * El sistema comprueba que no existe doble
          * entrada, es decir, que una misma
          * persona registre dos participaciones.
@@ -127,24 +127,34 @@ public class App
          * y no se añade la participacion a la rifa.
          */
 
-        // primera participacion de Squanchy
-        // total de participaciones = 1
+        // Registra la participacion de Squanchy
+        // Muestra el total de participaciones 
+        // en la rifa que ha de ser 1
 
         craft.register(entry);
         System.out.println(craft.totalEntries());
 
         // Squanchy intenta registrar otra participacion
-        // pero el sistema bloquea el registro
-        // total de participaciones = 1
+        // pero el sistema bloquea el registro.
+        // El total de participaciones sigue siendo 1
 
         craft.register(entry);
         System.out.println(craft.totalEntries());
 
         // Squanchy intenta registrar otra participacion
-        // cambiando su email manteniendo su metodo de pago
+        // cambiando su email pero manteniendo su metodo de pago
+        // El sistema bloquea el registro.
+
         entry = new Entry("squan.chy@closet.in");
         entry.payment("squanchy@paypal.com");
         craft.register(entry);
         System.out.println(craft.totalEntries());
+
+        /**
+         * Genera dos participaciones más
+         * y registralas en la rifa.
+         */
+
+        // metodo listar participaciones usuario
     }
 }
