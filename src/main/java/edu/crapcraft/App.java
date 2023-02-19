@@ -121,14 +121,27 @@ public class App
          * Has de chequear el correo electronico
          * y el metodo de pago. Si uno de los dos
          * es idéntico, se trata de la misma persona
-         * y no se añade la partucipacion a la rifa.
+         * y no se añade la participacion a la rifa.
          */
 
         // primera participacion
+        // total de participaciones = 1
+
         craft.register(entry);
+        System.out.println(craft.totalEntries());
 
         // Squanchy intenta registrar otra participacion
-        
+        // pero el sistema bloquea el registro
+        // total de participaciones = 1
 
+        craft.register(entry);
+        System.out.println(craft.totalEntries());
+
+        // Squanchy intenta registrar otra participacion
+        // cambiando su email manteniendo su metodo de pago
+        entry = new Entry("squan.chy@closet.in");
+        entry.payment("squanchy@paypal.com");
+        craft.register(entry);
+        System.out.println(craft.totalEntries());
     }
 }

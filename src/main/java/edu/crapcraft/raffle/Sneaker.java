@@ -38,6 +38,11 @@ public class Sneaker implements Raffle {
     }
 
     @Override
+    public Integer totalEntries() {
+        return this.bucket.totalEntries();
+    }
+
+    @Override
     public String toString() {
         StringBuilder repr = new StringBuilder();
         repr.append("\n\t\t")

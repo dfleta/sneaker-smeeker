@@ -8,11 +8,18 @@ public class Bucket {
     private Set<Entry> entries = new HashSet<Entry>();
 
     public void add(Entry entry) {
-        entries.add(entry);
+        // aqui firewall buscando paypal?
+        if (!this.isDoubleEntry(entry)) {
+            entries.add(entry);
+        } 
     }
 
     Integer totalEntries() {
         return this.entries.size();
+    }
+
+    private boolean isDoubleEntry(Entry entry) {
+        return this.entries.stream().anyMatch(e -> e.getPayment().equalsIgnoreCase(entry.getPayment()));
     }
     
 }

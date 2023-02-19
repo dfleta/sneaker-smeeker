@@ -34,6 +34,10 @@ public class Entry {
         this.payment = system;
     }
 
+    String getPayment() {
+        return this.payment;
+    }
+
     @Override
     public String toString() {
         StringBuilder repr = new StringBuilder();
@@ -64,7 +68,6 @@ public class Entry {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((email == null) ? 0 : email.hashCode());
-        result = prime * result + ((payment == null) ? 0 : payment.hashCode());
         return result;
     }
     
