@@ -87,7 +87,7 @@ public class App
         entry.setSize(Sizes.CUARENTA);
         entry.setAddress("Nearest closet s/n, 90210, Jerry's House, Via Lactea");
         entry.setTotal(craft.price());
-        entry.payment("Paypal");
+        entry.payment("squanchy@paypal.com");
 
         // añade a la clase GUI el componente para representar la entrada
         GUI.drawEntry(entry);
@@ -108,5 +108,13 @@ public class App
          */
 
         craft.register(entry);
+
+        /**
+         * Asegurate de que no existe doble
+         * entrada, es decir, que una misma
+         * persona no registre dos participaciones.
+         * Has de chequear el correo electronico
+         * y el metodo de pago.
+         */
     }
 }

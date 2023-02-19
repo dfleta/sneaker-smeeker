@@ -54,13 +54,18 @@ public class Entry {
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Entry) {
-            return this.email.equals(((Entry)obj).email) && this.payment.equals(((Entry)obj).payment);
+            return this.email.equals(((Entry)obj).email) || this.payment.equals(((Entry)obj).payment);
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return this.email.hashCode();
-    }    
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((email == null) ? 0 : email.hashCode());
+        result = prime * result + ((payment == null) ? 0 : payment.hashCode());
+        return result;
+    }
+    
 }
