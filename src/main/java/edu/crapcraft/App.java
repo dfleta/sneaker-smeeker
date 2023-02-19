@@ -51,7 +51,7 @@ public class App
         /**
          * Crea la rifa y printa sus datos.
          * 
-         * La funcion draw()
+         * La funcion draw() proporcionada
          * printa las propiedades
          * de la zapatilla:
          * - Estilo
@@ -59,11 +59,17 @@ public class App
          * - Precio
          * - Tallas disponibles
          * 
+         * Crea una clase donde situar por SRP
+         * la funcion drawSneaker.
+         * 
          * Las tallas se seleccionan por rango
          * de menor a mayor de entre las siguientes:
          * 6.5 US / 39 EU, 7.0 US / 40 EU, 7.5 US / 40 1/2 EU, 
          * 8.0 US / 41 EU, 8.5 US / 42 EU,
          * 9.0 US / 42 1/2 EU, 9.5 US / 43 EU
+         * 
+         * Implementa un componente que permita 
+         * configurar el rango de tallas de una sneaker.
          */
 
         Raffle craft = new Sneaker("Nike Craft General Purpose", "Brown", 109.99);
@@ -75,11 +81,15 @@ public class App
          * El usuario Squanchy introduce sus datos
          * para obtener una participacion.
          * - Nombre
-         * - Correo electronico
+         * - Email
          * - Talla
          * - Direccion de envio
          * - Metodo de pago
          * - Total
+         * 
+         * La igualdad de dos objetos Entry
+         * se determina por las propiedades
+         * email y método de pago.
          */
 
         Entry entry = new Entry("squanchy@closet.in");
@@ -105,16 +115,20 @@ public class App
 
         /**
          * Añade la participacion a la rifa.
+         * El sistema comprueba que no existe doble
+         * entrada, es decir, que una misma
+         * persona registre dos participaciones.
+         * Has de chequear el correo electronico
+         * y el metodo de pago. Si uno de los dos
+         * es idéntico, se trata de la misma persona
+         * y no se añade la partucipacion a la rifa.
          */
 
+        // primera participacion
         craft.register(entry);
 
-        /**
-         * Asegurate de que no existe doble
-         * entrada, es decir, que una misma
-         * persona no registre dos participaciones.
-         * Has de chequear el correo electronico
-         * y el metodo de pago.
-         */
+        // Squanchy intenta registrar otra participacion
+        
+
     }
 }
