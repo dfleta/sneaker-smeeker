@@ -31,8 +31,16 @@ public class Entry {
         this.total = total;
     }
 
+    public Double getTotal() {
+        return this.total;
+    }
+
     public void payment(String system) {
         this.payment = system;
+    }
+
+    public String getPayment() {
+        return this.payment;
     }
 
     String email() {

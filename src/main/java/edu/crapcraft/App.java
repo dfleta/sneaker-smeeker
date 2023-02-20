@@ -1,6 +1,8 @@
 package edu.crapcraft;
 
 import edu.crapcraft.GUI.GUI;
+import edu.crapcraft.Payment.Payment;
+import edu.crapcraft.Payment.Paypal;
 import edu.crapcraft.raffle.Entry;
 import edu.crapcraft.raffle.Raffle;
 import edu.crapcraft.raffle.Sizes;
@@ -103,17 +105,6 @@ public class App
         GUI.drawEntry(entry);
 
         /**
-         * Conecta con el sistema de pagos para
-         * autorizar el pago.
-         * 
-         * El sistema de pagos autoriza el cargo
-         * y lo deja pendiente de cobro
-         * hasta que el usuario gana la rifa. 
-         */
-
-         // factoria para elegir metodo pago
-
-        /**
          * Añade la participacion en la rifa.
          * El sistema comprueba que no existe doble
          * entrada, es decir, que una misma
@@ -186,7 +177,7 @@ public class App
          * Elimina la participacion de Summer.
          */
 
-        craft.cancel(summer);    
+        craft.cancel(summer); 
         System.out.println("\n\t\tSummer is gone :\n\t\t" + craft.listEntries());
 
         /**
@@ -197,7 +188,25 @@ public class App
          */
 
         Entry winner = craft.draw();
-        GUI.drawWinner(winner);        
+        GUI.drawWinner(winner);      
+        
+        /**
+         * Conecta con el sistema de pagos para
+         * realizar el cobro.
+         * 
+         * El sistema de pagos autoriza el cargo
+         * si el usuario existe en el sistema
+         * y descuenta de sus fondos la cantidad
+         * que supone la rifa.
+         */
 
+        Payment paypal = new Paypal();
+        boolean userExists = paypal.autentication(winner.getPayment());
+        boolean transaction = false;
+        if (userExists) {
+            transaction = paypal.pay(winner.getPayment(), winner.getTotal());
+        }
+
+        System.out.println("\t\t" + winner.getPayment() + " credit: " + paypal.credit(winner.getPayment()));
     }
 }
