@@ -62,7 +62,7 @@ public class App
          * - Tallas disponibles
          * 
          * Crea una clase llamada GUI donde 
-         * situar por SRP la rutina drawSneaker.
+         * situar por SRP la rutina drawSneaker().
          * 
          * Las tallas se seleccionan por rango
          * de menor a mayor de entre las siguientes:
@@ -102,7 +102,7 @@ public class App
         entry.payment("squanchy@paypal.com");
 
         /**
-         * Añade a la clase GUI la rutina drawEntry
+         * Añade a la clase GUI la rutina drawEntry()
          * para representar la entrada.
          */
         GUI.drawEntry(entry);
@@ -181,7 +181,10 @@ public class App
         System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
 
         /**
-         * Extraccion de los ganadores
+         * Extrae una participacion de la rifa.
+         * Es el ganador de la rifa.
+         * Printa sus datos por consola.
+         * Añade la rutina drawWinner() a GUI. 
          */
 
         Entry winner = craft.draw();
