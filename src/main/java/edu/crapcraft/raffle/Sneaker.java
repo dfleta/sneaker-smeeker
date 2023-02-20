@@ -42,6 +42,11 @@ public class Sneaker implements Raffle {
     }
 
     @Override
+    public void cancel(Entry... entry) {
+            this.bucket.delete(entry);   
+    }
+
+    @Override
     public Integer totalEntries() {
         return this.bucket.totalEntries();
     }

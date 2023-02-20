@@ -1,7 +1,5 @@
 package edu.crapcraft;
 
-import java.util.List;
-
 import edu.crapcraft.GUI.GUI;
 import edu.crapcraft.raffle.Entry;
 import edu.crapcraft.raffle.Raffle;
@@ -171,14 +169,28 @@ public class App
         morty.setTotal(craft.price());
         morty.payment("morty@paypal.com");
 
-        craft.register(birdman, morty);
+        Entry summer = new Entry("summer@business.com");
+        summer.setUserName("Summer");
+        summer.setSize(Sizes.CUARENTA);
+        summer.setAddress("Melrose Place, 90210, Los Angeles");
+        summer.setTotal(craft.price());
+        summer.payment("summer@paypal.com");
 
+        craft.register(birdman, morty, summer);
 
         /**
          * Muestra el email de todos los participantes en la rifa.
          */
 
         System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
+
+        /**
+         * Morty se lo piensa y decide anular su participacion.
+         * Elimina la participacion de Summer.
+         */
+
+        craft.cancel(summer);    
+        System.out.println("\n\t\tSummer is gone :\n\t\t" + craft.listEntries());
 
         /**
          * Extrae una participacion de la rifa.
