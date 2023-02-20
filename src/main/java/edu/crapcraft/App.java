@@ -1,5 +1,7 @@
 package edu.crapcraft;
 
+import java.util.List;
+
 import edu.crapcraft.GUI.GUI;
 import edu.crapcraft.raffle.Entry;
 import edu.crapcraft.raffle.Raffle;
@@ -173,11 +175,17 @@ public class App
 
 
         /**
-         * Muestra el email y metodo de pago
-         * de los participantes en la rifa.
+         * Muestra el email de todos los participantes en la rifa.
          */
 
         System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
+
+        /**
+         * Extraccion de los ganadores
+         */
+
+        Entry winner = craft.draw();
+        GUI.drawWinner(winner);
 
     }
 }

@@ -9,6 +9,8 @@ public class Entry {
     private Double total = 0d;
     private String payment = "";
 
+    public Entry() {};
+
     public Entry(String email) {
         this.email = email;
     };

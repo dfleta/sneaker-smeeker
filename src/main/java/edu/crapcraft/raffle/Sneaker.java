@@ -1,6 +1,8 @@
 package edu.crapcraft.raffle;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 public class Sneaker implements Raffle {
 
@@ -47,6 +49,12 @@ public class Sneaker implements Raffle {
     @Override
     public String listEntries() {
         return this.bucket.listEntries();
+    }
+
+    @Override
+    public Entry draw() {
+        Optional<Entry> winner = this.bucket.draw();
+        return winner.orElse(new Entry());  
     }
 
     @Override
