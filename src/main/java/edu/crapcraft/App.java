@@ -40,9 +40,6 @@ import edu.crapcraft.raffle.Sneaker;
  * La lógica tras cada historia de usuario 
  * está descrita en el `main` de la clase
  * principal `App.java`.
- * 
- * Si tienes dudas, puedes interactuar con
- * la webapp XXXXXXXXXXX
  */
 public class App 
 {
