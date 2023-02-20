@@ -132,14 +132,14 @@ public class App
         // en la rifa que ha de ser 1
 
         craft.register(entry);
-        System.out.println(craft.totalEntries());
+        System.out.println("\t\tSquanchy in:" + craft.totalEntries());
 
         // Squanchy intenta registrar otra participacion
         // pero el sistema bloquea el registro.
         // El total de participaciones sigue siendo 1
 
         craft.register(entry);
-        System.out.println(craft.totalEntries());
+        System.out.println("\t\tSquanchy out!:" + craft.totalEntries());
 
         // Squanchy intenta registrar otra participacion
         // cambiando su email pero manteniendo su metodo de pago
@@ -148,7 +148,7 @@ public class App
         Entry doubleEntry = new Entry("squan.chy@closet.in");
         doubleEntry.payment("squanchy@paypal.com");
         craft.register(doubleEntry);
-        System.out.println(craft.totalEntries());
+        System.out.println("\t\tSquanchy out!:" + craft.totalEntries());
 
         /**
          * Genera dos participaciones más
@@ -177,6 +177,7 @@ public class App
          * de los participantes en la rifa.
          */
 
+        System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
 
     }
 }

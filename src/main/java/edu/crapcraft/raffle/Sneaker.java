@@ -45,6 +45,11 @@ public class Sneaker implements Raffle {
     }
 
     @Override
+    public String listEntries() {
+        return this.bucket.listEntries();
+    }
+
+    @Override
     public String toString() {
         StringBuilder repr = new StringBuilder();
         repr.append("\n\t\t")

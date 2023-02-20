@@ -7,7 +7,6 @@ public class GUI {
 
     public static void drawSneaker(Raffle sneaker) {
         System.out.println(
-        "\n\n" +
         "\t\t" + " _    _" + "\n" +
         "\t\t" + "(_\\__/(,_" + "\n" +
         "\t\t" + "| \\ `_////-._" + "\n" +
@@ -19,7 +18,6 @@ public class GUI {
 
     public static void drawEntry(Entry entry) {
         System.out.println(
-        "\n\n" +
-        "\t\t" + entry.toString());
+        "\t\t" + entry.toString() + "\n");
     }
 }

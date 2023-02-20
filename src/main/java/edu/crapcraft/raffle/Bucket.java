@@ -2,6 +2,7 @@ package edu.crapcraft.raffle;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Bucket {
 
@@ -17,8 +18,12 @@ public class Bucket {
         return this.entries.size();
     }
 
+    String listEntries() {
+        return this.entries.stream().map(Entry::email).collect(Collectors.toList()).toString();
+    }
+
     private boolean isDoubleEntry(Entry entry) {
-        return this.entries.stream().anyMatch(e -> e.getPayment().equalsIgnoreCase(entry.getPayment()));
+        return this.entries.stream().anyMatch(e -> e.payment().equalsIgnoreCase(entry.payment()));
     }
     
 }

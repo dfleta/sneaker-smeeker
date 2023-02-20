@@ -9,6 +9,9 @@ public class Entry {
     private Double total = 0d;
     private String payment = "";
 
+    public Entry(String email) {
+        this.email = email;
+    };
     
     public void setUserName(String userName) {
         this.userName = userName;
@@ -22,10 +25,6 @@ public class Entry {
         this.address = address;
     }
 
-    public Entry(String email) {
-        this.email = email;
-    };
-
     public void setTotal(Double total) {
         this.total = total;
     }
@@ -34,7 +33,11 @@ public class Entry {
         this.payment = system;
     }
 
-    String getPayment() {
+    String email() {
+        return this.email;
+    }
+
+    String payment() {
         return this.payment;
     }
 
