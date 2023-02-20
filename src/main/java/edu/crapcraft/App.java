@@ -182,7 +182,7 @@ public class App
         System.out.println("\n\t\tEntries:\n\t\t" + craft.listEntries());
 
         /**
-         * Morty se lo piensa y decide anular su participacion.
+         * Summer se lo piensa y decide anular su participacion.
          * Elimina la participacion de Summer.
          */
 
