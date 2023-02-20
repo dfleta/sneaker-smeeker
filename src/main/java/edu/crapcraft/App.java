@@ -145,9 +145,9 @@ public class App
         // cambiando su email pero manteniendo su metodo de pago
         // El sistema bloquea el registro.
 
-        entry = new Entry("squan.chy@closet.in");
-        entry.payment("squanchy@paypal.com");
-        craft.register(entry);
+        Entry doubleEntry = new Entry("squan.chy@closet.in");
+        doubleEntry.payment("squanchy@paypal.com");
+        craft.register(doubleEntry);
         System.out.println(craft.totalEntries());
 
         /**
@@ -155,6 +155,28 @@ public class App
          * y registralas en la rifa.
          */
 
-        // metodo listar participaciones usuario
+        Entry birdman = new Entry("birdman@love.in");
+        birdman.setUserName("Birdman");
+        birdman.setSize(Sizes.CUARENTA);
+        birdman.setAddress("Melrose Place, 90210, Los Angeles");
+        birdman.setTotal(craft.price());
+        birdman.payment("birdman@paypal.com");
+
+        Entry morty = new Entry("morty@business.com");
+        morty.setUserName("Morty");
+        morty.setSize(Sizes.CUARENTA);
+        morty.setAddress("Melrose Place, 90210, Los Angeles");
+        morty.setTotal(craft.price());
+        morty.payment("morty@paypal.com");
+
+        craft.register(birdman, morty);
+
+
+        /**
+         * Muestra el email y metodo de pago
+         * de los participantes en la rifa.
+         */
+
+
     }
 }

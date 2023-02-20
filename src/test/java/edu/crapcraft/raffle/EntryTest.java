@@ -21,7 +21,7 @@ public class EntryTest {
     }
 
     @Test
-    public void test_equals() {
+    public void equals_test() {
         Entry other = new Entry("squanchy@closet.in");
         other.setUserName("Squanchy");
         other.setSize(Sizes.CUARENTA);
@@ -33,7 +33,7 @@ public class EntryTest {
     }
 
     @Test
-    public void test_equals_email() {
+    public void equals_email_test() {
         Entry other = new Entry("squanchy@closet.in");
         other.setUserName("Squanchy");
         other.setSize(Sizes.CUARENTA);
@@ -45,7 +45,7 @@ public class EntryTest {
     }
 
     @Test
-    public void test_equals_payment() {
+    public void equals_payment_test() {
         Entry other = new Entry("squan.chy@closet.in");
         other.setUserName("Squanchy");
         other.setSize(Sizes.CUARENTA);
@@ -58,7 +58,7 @@ public class EntryTest {
 
 
     @Test
-    public void test_not_equals() {
+    public void not_equals_test() {
         Entry other = new Entry("squan.chy@closet.in");
         other.setUserName("Squanchy");
         other.setSize(Sizes.CUARENTA);

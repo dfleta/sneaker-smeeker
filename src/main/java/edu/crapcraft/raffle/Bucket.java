@@ -7,8 +7,7 @@ public class Bucket {
 
     private Set<Entry> entries = new HashSet<Entry>();
 
-    public void add(Entry entry) {
-        // aqui firewall buscando paypal?
+    void add(Entry entry) {
         if (!this.isDoubleEntry(entry)) {
             entries.add(entry);
         } 

@@ -33,8 +33,10 @@ public class Sneaker implements Raffle {
     }
 
     @Override
-    public void register(Entry entry) {
-        this.bucket.add(entry);
+    public void register(Entry... entry) {
+        for (Entry e : entry) {
+            this.bucket.add(e);
+        }
     }
 
     @Override
