@@ -1,22 +1,18 @@
 package edu.crapcraft.raffle;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Bucket {
+class Bucket {
 
-    private Set<Entry> entries = new HashSet<Entry>();
+    private final Set<Entry> entries = new HashSet<Entry>();
     private Random rand = new Random();
 
-    public Bucket() {}; 
+    Bucket() {}; 
 
     void add(Entry entry) {
         if (!this.isDoubleEntry(entry)) {
@@ -37,12 +33,6 @@ public class Bucket {
     }
 
     Optional<Entry> draw() {
-        //List<Entry> e = new ArrayList<Entry>();
-        //e.addAll(this.entries);
-        //int winner = this.rand.nextInt(e.size());
-        // OPTIONAL
-        //return List.of(e.get(winner));
-
         return this.entries.stream().skip(rand.nextInt(entries.size())).findFirst();
     } 
 

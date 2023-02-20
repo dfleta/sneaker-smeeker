@@ -200,7 +200,7 @@ public class App
          */
 
         Entry winner = craft.draw();
-        GUI.drawWinner(winner);
+        GUI.drawWinner(winner);        
 
     }
 }
