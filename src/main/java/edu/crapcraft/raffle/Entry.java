@@ -13,7 +13,7 @@ public class Entry {
 
     public Entry(String email) {
         this.email = email;
-    };
+    }
     
     public void setUserName(String userName) {
         this.userName = userName;
